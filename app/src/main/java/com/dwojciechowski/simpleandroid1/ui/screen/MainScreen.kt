@@ -12,11 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.dwojciechowski.simpleandroid1.data.ListDataProvider
-import com.dwojciechowski.simpleandroid1.ui.theme.SimpleAndroid1Theme
+import com.dwojciechowski.simpleandroid1.ui.theme.MainAppTheme
 
 @Composable
 fun MainActivityScreen(navController: NavController) {
-    SimpleAndroid1Theme {
+    MainAppTheme {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),

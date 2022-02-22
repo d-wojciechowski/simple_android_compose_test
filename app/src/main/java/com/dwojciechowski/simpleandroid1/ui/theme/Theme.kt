@@ -30,7 +30,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun SimpleAndroid1Theme(
+fun MainAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
