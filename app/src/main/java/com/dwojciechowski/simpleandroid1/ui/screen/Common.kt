@@ -18,19 +18,21 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.dwojciechowski.simpleandroid1.model.Abbreviated
+import com.dwojciechowski.simpleandroid1.model.Recipee
 import com.dwojciechowski.simpleandroid1.ui.nav.Screen
 import com.dwojciechowski.simpleandroid1.ui.theme.MainAppTheme
 
 @Composable
-fun ItemView(items: List<Pair<String, String>>, navController: NavController) {
+fun ItemView(items: List<Abbreviated>, navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .padding(start = 10.dp, end = 10.dp)
     ) {
         items(items) { item ->
-            DisplayRow(item.first, item.second) {
-                navController.navigate(Screen.Details.withArgs("${item.first}L"))
+            DisplayRow(item.logo, item.shortDescription) {
+                navController.navigate(Screen.Details.withArgs("${item.logo}L"))
             }
             Spacer(Modifier.size(5.dp))
         }
@@ -42,11 +44,11 @@ fun ItemView(items: List<Pair<String, String>>, navController: NavController) {
 fun ItemViewPreview() {
 
     val listOf = listOf(
-        Pair("AA", "AAAAAAAAAAAAAAAAAAA"),
-        Pair("AA", "AAAAAAAAAAAAAAAAAAA"),
-        Pair("AA", "AAAAAAAAAAAAAAAAAAA"),
-        Pair("AA", "AAAAAAAAAAAAAAAAAAA"),
-        Pair("AA", "AAAAAAAAAAAAAAAAAAA"),
+        Recipee("AA", listOf("AAAAAAAAAAAAAAAAAAA")),
+        Recipee("AA", listOf("AAAAAAAAAAAAAAAAAAA")),
+        Recipee("AA", listOf("AAAAAAAAAAAAAAAAAAA")),
+        Recipee("AA", listOf("AAAAAAAAAAAAAAAAAAA")),
+        Recipee("AA", listOf("AAAAAAAAAAAAAAAAAAA")),
     )
     val rememberNavController = rememberNavController()
     MainAppTheme(darkTheme = true) {
